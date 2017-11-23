@@ -26,21 +26,52 @@ public class gameDisplay extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        leftTurn = new javax.swing.JButton();
+        moveForward = new javax.swing.JButton();
+        rightTurn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        leftTurn.setText("Left");
+
+        moveForward.setText("Move");
+        moveForward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moveForwardActionPerformed(evt);
+            }
+        });
+
+        rightTurn.setText("Right");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(leftTurn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addComponent(moveForward)
+                .addGap(109, 109, 109)
+                .addComponent(rightTurn))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(257, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(leftTurn)
+                    .addComponent(moveForward)
+                    .addComponent(rightTurn))
+                .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void moveForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveForwardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_moveForwardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +108,8 @@ public class gameDisplay extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton leftTurn;
+    private javax.swing.JButton moveForward;
+    private javax.swing.JButton rightTurn;
     // End of variables declaration//GEN-END:variables
 }
