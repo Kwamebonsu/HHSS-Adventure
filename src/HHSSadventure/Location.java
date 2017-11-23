@@ -11,5 +11,22 @@ package HHSSadventure;
 public class Location {
 
     private String name;
-    private char Direction;
+    private String direction;
+    private String imgName;
+    private String blocked;
+
+    public Location(String name, String direction, String imgName, String blocked) {
+        this.name = name;
+        this.direction = direction;
+        this.imgName = imgName;
+        this.blocked = blocked;
+    }
+
+    public String getName() {
+        return this.getName();
+    }
+
+    public String getDirection() {
+        return this.getDirection();
+    }
 }
