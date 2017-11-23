@@ -9,7 +9,6 @@ package HHSSadventure;
  * @author bonsk5852
  */
 public class Location {
-
-    private String name;
-    private char Direction;
+    //  private String name;
+    //   private char Direction;
 }
