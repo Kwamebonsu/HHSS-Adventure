@@ -9,5 +9,11 @@ package HHSSadventure;
  * @author malij6756
  */
 public class Player {
-    
+
+    private String direction;
+    private Location location;
+
+    public Player(Location l) {
+        location = l;
+    }
 }
