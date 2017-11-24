@@ -29,4 +29,16 @@ public class Location {
     public String getDirection() {
         return this.getDirection();
     }
+
+    public String getImgName() {
+        return this.getImgName();
+    }
+
+    public boolean isBlocked(String blocked) {
+        if (blocked.equalsIgnoreCase("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
