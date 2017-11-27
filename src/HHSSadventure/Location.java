@@ -14,6 +14,22 @@ public class Location {
     private String direction;
     private String imgName;
     private String blocked;
+    private String NName;
+    private String NDirection;
+    private String NImgName;
+    private String NBlocked;
+    private String EName;
+    private String EDirection;
+    private String EImgName;
+    private String EBlocked;
+    private String SName;
+    private String SDirection;
+    private String SImgName;
+    private String SBlocked;
+    private String WName;
+    private String WDirection;
+    private String WImgName;
+    private String WBlocked;
 
     public Location(String name, String direction, String imgName, String blocked) {
         this.name = name;
