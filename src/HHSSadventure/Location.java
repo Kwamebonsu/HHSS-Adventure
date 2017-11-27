@@ -23,22 +23,34 @@ public class Location {
     }
 
     public String getName() {
-        return this.getName();
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDirection() {
-        return this.getDirection();
+        return this.direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 
     public String getImgName() {
-        return this.getImgName();
+        return this.imgName;
     }
 
     public boolean isBlocked(String blocked) {
-        if (blocked.equalsIgnoreCase("true")) {
-            return true;
-        } else {
+        if (blocked.equalsIgnoreCase("false")) {
             return false;
+        } else {
+            return true;
         }
+    }
+
+    public void setBlocked(String blocked) {
+        this.blocked = blocked;
     }
 }
