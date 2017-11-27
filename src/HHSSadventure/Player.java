@@ -9,5 +9,4 @@ package HHSSadventure;
  * @author malij6756
  */
 public class Player {
-    
 }

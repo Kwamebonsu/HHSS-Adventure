@@ -9,5 +9,36 @@ package HHSSadventure;
  * @author bonsk5852
  */
 public class Location {
-    
+
+    private String name;
+    private String direction;
+    private String imgName;
+    private String blocked;
+
+    public Location(String name, String direction, String imgName, String blocked) {
+        this.name = name;
+        this.direction = direction;
+        this.imgName = imgName;
+        this.blocked = blocked;
+    }
+
+    public String getName() {
+        return this.getName();
+    }
+
+    public String getDirection() {
+        return this.getDirection();
+    }
+
+    public String getImgName() {
+        return this.getImgName();
+    }
+
+    public boolean isBlocked(String blocked) {
+        if (blocked.equalsIgnoreCase("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
