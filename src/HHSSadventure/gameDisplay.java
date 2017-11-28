@@ -15,6 +15,7 @@ public class gameDisplay extends javax.swing.JFrame {
      */
     public gameDisplay() {
         initComponents();
+        // Read the Text File
     }
 
     /**
