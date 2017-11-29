@@ -25,9 +25,17 @@ public class Location {
     public String getName() {
         return this.getName();
     }
+    
+    public void setName(String name){
+        this.name = name;
+    }
 
     public String getDirection() {
         return this.getDirection();
+    }
+    
+    public void setDirection(String direction){
+       this.direction = direction;
     }
 
     public String getImgName() {
@@ -41,4 +49,10 @@ public class Location {
             return false;
         }
     }
+    
+    public void setBlocked(String blocked){
+        this.blocked = blocked;
+    }
+    
+    
 }
