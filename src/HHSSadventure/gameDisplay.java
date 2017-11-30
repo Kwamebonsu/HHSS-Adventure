@@ -30,7 +30,7 @@ public class gameDisplay extends javax.swing.JFrame {
         leftTurn = new javax.swing.JButton();
         moveForward = new javax.swing.JButton();
         rightTurn = new javax.swing.JButton();
-        jImage1 = new HHSSadventure.JImage();
+        jImage2 = new HHSSadventure.JImage();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,21 +52,17 @@ public class gameDisplay extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(leftTurn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addGap(232, 232, 232)
                 .addComponent(moveForward)
-                .addGap(109, 109, 109)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
                 .addComponent(rightTurn))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(jImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jImage2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
-                .addComponent(jImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addComponent(jImage2, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(leftTurn)
                     .addComponent(moveForward)
@@ -79,6 +75,8 @@ public class gameDisplay extends javax.swing.JFrame {
 
     private void moveForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveForwardActionPerformed
         // TODO add your handling code here
+        Location hi = new Location("Kwame");
+        hi.getNorth().getImgName();
     }//GEN-LAST:event_moveForwardActionPerformed
 
     /**
@@ -116,7 +114,7 @@ public class gameDisplay extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private HHSSadventure.JImage jImage1;
+    private HHSSadventure.JImage jImage2;
     private javax.swing.JButton leftTurn;
     private javax.swing.JButton moveForward;
     private javax.swing.JButton rightTurn;
