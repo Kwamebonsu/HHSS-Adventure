@@ -23,4 +23,5 @@ public class Location {
         this.south = s;
         this.west = w;
     }
+    
 }

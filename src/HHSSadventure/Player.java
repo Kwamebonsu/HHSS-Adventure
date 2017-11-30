@@ -9,4 +9,20 @@ package HHSSadventure;
  * @author malij6756
  */
 public class Player {
+    
+    private String name;
+    private String direction;
+    private String imgName;
+    private String blocked;
+    
+    
+    public void test(Location location){
+    
+        
+}
+    
+    
+    
+    
+    
 }
