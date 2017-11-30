@@ -58,11 +58,11 @@ public class LOL {
         this.isBlocked = b;
     }
 
-    public String isNext() {
+    public String getIsNext() {
         return this.isNext;
     }
 
-    public void isNext(String n) {
+    public void SetIsNext(String n) {
         this.isNext = n;
     }
 
