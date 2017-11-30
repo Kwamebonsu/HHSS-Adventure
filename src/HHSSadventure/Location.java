@@ -11,43 +11,17 @@ package HHSSadventure;
 public class Location {
 
     private String name;
-    private String direction;
-    private String imgName;
-    private String blocked;
+    private LOL north;
+    private LOL east;
+    private LOL south;
+    private LOL west;
 
-    public Location(String name, String direction, String imgName, String blocked) {
+    public Location(String name, LOL n, LOL e, LOL s, LOL w) {
         this.name = name;
-        this.direction = direction;
-        this.imgName = imgName;
-        this.blocked = blocked;
-    }
-
-    public String getName() {
-        return this.getName();
-    }
-    
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public String getDirection() {
-        return this.getDirection();
-    }
-    
-    public void setDirection(String direction){
-       this.direction = direction;
-    }
-
-    public String getImgName() {
-        return this.getImgName();
-    }
-
-    public boolean isBlocked(String blocked) {
-        if (blocked.equalsIgnoreCase("true")) {
-            return true;
-        } else {
-            return false;
-        }
+        this.north = n;
+        this.east = e;
+        this.south = s;
+        this.west = w;
     }
     
     public void setBlocked(String blocked){
