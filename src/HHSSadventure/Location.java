@@ -24,9 +24,4 @@ public class Location {
         this.west = w;
     }
     
-    public void setBlocked(String blocked){
-        this.blocked = blocked;
-    }
-    
-    
 }
