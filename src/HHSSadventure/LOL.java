@@ -16,7 +16,11 @@ public class LOL {
     private String isNext;
     private String nextDirection;
 
-    // constructor
+    public LOL(String direction) {
+        this.direction = direction;
+    }
+
+    // constructor 2
     public LOL(String direction, String imgName, String isBlocked, String isNext, String nextDirection) {
         this.direction = direction;
         this.imgName = imgName;
@@ -25,6 +29,7 @@ public class LOL {
         this.nextDirection = nextDirection;
     }
 
+    // Getters and Setters
     public String getDirection() {
         return this.direction;
     }
