@@ -62,7 +62,7 @@ public class LOL {
         return this.isNext;
     }
 
-    public void SetIsNext(String n) {
+    public void setIsNext(String n) {
         this.isNext = n;
     }
 
