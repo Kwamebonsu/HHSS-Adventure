@@ -9,12 +9,14 @@ package HHSSadventure;
  * @author malij6756
  */
 public class gameDisplay extends javax.swing.JFrame {
+    private mainGame controller;
 
     /**
      * Creates new form gameDisplay
      */
     public gameDisplay() {
         initComponents();
+        controller = new mainGame();
         // Read the Text File
     }
 
