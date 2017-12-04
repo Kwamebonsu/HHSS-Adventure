@@ -46,23 +46,19 @@ public class LOL {
         this.imgName = n;
     }
 
-    public boolean isBlocked(String blocked) {
-        if (blocked.equalsIgnoreCase("false")) {
-            return false;
-        } else {
-            return true;
-        }
+    public String getIsBlocked() {
+        return isBlocked;
     }
 
     public void setBlocked(String b) {
         this.isBlocked = b;
     }
 
-    public String isNext() {
+    public String getIsNext() {
         return this.isNext;
     }
 
-    public void isNext(String n) {
+    public void setIsNext(String n) {
         this.isNext = n;
     }
 
