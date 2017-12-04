@@ -32,7 +32,6 @@ public class gameDisplay extends javax.swing.JFrame {
         leftTurn = new javax.swing.JButton();
         moveForward = new javax.swing.JButton();
         rightTurn = new javax.swing.JButton();
-        jImage1 = new HHSSadventure.JImage();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,17 +57,11 @@ public class gameDisplay extends javax.swing.JFrame {
                 .addComponent(moveForward)
                 .addGap(109, 109, 109)
                 .addComponent(rightTurn))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(jImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
-                .addComponent(jImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addContainerGap(257, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(leftTurn)
                     .addComponent(moveForward)
@@ -118,7 +111,6 @@ public class gameDisplay extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private HHSSadventure.JImage jImage1;
     private javax.swing.JButton leftTurn;
     private javax.swing.JButton moveForward;
     private javax.swing.JButton rightTurn;

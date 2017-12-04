@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public class mainGame {
 
-    private String startLocation;
-    private String startDirection;
+    private String myLocation;
+    private String myDirection;
     private Location[] locations;
     private LOL north;
     private LOL east;
@@ -27,7 +27,6 @@ public class mainGame {
         // create a blank file reader
         FileReader file = null;
         try {
-
             //URL url = TextFileExample.class.getResource("input.txt");
             // creating the file reader
             file = new FileReader("input.txt");
@@ -40,8 +39,8 @@ public class mainGame {
         }
         // Use a scanner with the file
         Scanner in = new Scanner(file);
-        this.startLocation = in.next();
-        this.startDirection = in.nextLine();
+        this.myLocation = in.next();
+        this.myDirection = in.nextLine();
 
         // location data collector
         locations = new Location[100];
@@ -66,6 +65,7 @@ public class mainGame {
                     nextLocation = null;
                     nextDirection = null;
                 }
+                // parameters
                 if (j == 0) {
                     north.setDirection(direction);
                     north.setImgName(imageName);
@@ -99,10 +99,65 @@ public class mainGame {
             locations[i] = c;
         }
     }
-    
-    
-    
-    
+
+    public void move() {
+        int counter = 0;
+        // finding the position where 
+        while (myLocation != locations[counter].getName()) {
+            counter++;
+        }
+        // changes direction and location to next position
+        if (myDirection == "N") {
+            if (locations[counter].getNorth().getIsBlocked() == "true") {
+                myLocation = locations[counter].getNorth().getIsNext();
+                myDirection = locations[counter].getNorth().getNextDirection();
+            }
+        } else if (myDirection == "E") {
+            if (locations[counter].getEast().getIsBlocked() == "true") {
+                myLocation = locations[counter].getEast().getIsNext();
+                myDirection = locations[counter].getEast().getNextDirection();
+            }
+        } else if (myDirection == "S") {
+            if (locations[counter].getSouth().getIsBlocked() == "true") {
+                myLocation = locations[counter].getSouth().getIsNext();
+                myDirection = locations[counter].getSouth().getNextDirection();
+            }
+        } else if (myDirection == "W") {
+            if (locations[counter].getWest().getIsBlocked() == "true") {
+                myLocation = locations[counter].getWest().getIsNext();
+                myDirection = locations[counter].getWest().getNextDirection();
+            }
+        }
+
+
+    }
+
+    public void rightTurn() {
+        // changes current direction to the right of it
+        if (myDirection == "N") {
+            myDirection = "E";
+        } else if (myDirection == "E") {
+            myDirection = "S";
+        } else if (myDirection == "S") {
+            myDirection = "W";
+        } else if (myDirection == "W") {
+            myDirection = "N";
+        }
+    }
+
+    public void leftTurn() {
+
+        // changes current direction to the one left of it
+        if (myDirection == "N") {
+            myDirection = "W";
+        } else if (myDirection == "E") {
+            myDirection = "N";
+        } else if (myDirection == "S") {
+            myDirection = "E";
+        } else if (myDirection == "W") {
+            myDirection = "S";
+        }
+    }
 
     /**
      * @param args the command line arguments
