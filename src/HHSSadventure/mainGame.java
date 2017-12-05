@@ -24,7 +24,13 @@ public class mainGame {
 
     // reading in the file
     public mainGame() {
-
+        
+        // initializing the directions
+        north = null;
+        east = null;
+        west = null;
+        south = null;
+        
         // create a blank file reader
         FileReader file = null;
         try {
