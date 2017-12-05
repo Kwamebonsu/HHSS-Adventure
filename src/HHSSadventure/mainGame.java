@@ -15,6 +15,7 @@ public class mainGame {
 
     private String myLocation;
     private String myDirection;
+    private String myImage;
     private Location[] locations;
     private LOL north;
     private LOL east;
@@ -41,6 +42,14 @@ public class mainGame {
         Scanner in = new Scanner(file);
         this.myLocation = in.next();
         this.myDirection = in.nextLine();
+        
+        int counter = 0;
+        // finding the position where 
+        while (myLocation != locations[counter].getName()) {
+            counter++;
+        }
+        // beginning image is stored beforehand
+        myImage = locations[counter].getNorth().getImgName();
 
         // location data collector
         locations = new Location[100];
@@ -111,21 +120,25 @@ public class mainGame {
             if (locations[counter].getNorth().getIsBlocked() == "true") {
                 myLocation = locations[counter].getNorth().getIsNext();
                 myDirection = locations[counter].getNorth().getNextDirection();
+                myImage = locations[counter].getNorth().getImgName();
             }
         } else if (myDirection == "E") {
             if (locations[counter].getEast().getIsBlocked() == "true") {
                 myLocation = locations[counter].getEast().getIsNext();
                 myDirection = locations[counter].getEast().getNextDirection();
+                myImage = locations[counter].getEast().getImgName();
             }
         } else if (myDirection == "S") {
             if (locations[counter].getSouth().getIsBlocked() == "true") {
                 myLocation = locations[counter].getSouth().getIsNext();
                 myDirection = locations[counter].getSouth().getNextDirection();
+                myImage = locations[counter].getSouth().getImgName();
             }
         } else if (myDirection == "W") {
             if (locations[counter].getWest().getIsBlocked() == "true") {
                 myLocation = locations[counter].getWest().getIsNext();
                 myDirection = locations[counter].getWest().getNextDirection();
+                myImage = locations[counter].getWest().getImgName();
             }
         }
 
@@ -133,29 +146,49 @@ public class mainGame {
     }
 
     public void rightTurn() {
+        
+         int counter = 0;
+        // finding the position where 
+        while (myLocation != locations[counter].getName()) {
+            counter++;
+        }
+        
         // changes current direction to the right of it
         if (myDirection == "N") {
             myDirection = "E";
+            myImage = locations[counter].getEast().getImgName();
         } else if (myDirection == "E") {
             myDirection = "S";
+            myImage = locations[counter].getSouth().getImgName();
         } else if (myDirection == "S") {
             myDirection = "W";
+            myImage = locations[counter].getWest().getImgName();
         } else if (myDirection == "W") {
             myDirection = "N";
+            myImage = locations[counter].getNorth().getImgName();
         }
     }
 
     public void leftTurn() {
+        int counter = 0;
+        // finding the position where 
+        while (myLocation != locations[counter].getName()) {
+            counter++;
+        }
 
         // changes current direction to the one left of it
         if (myDirection == "N") {
             myDirection = "W";
+            myImage = locations[counter].getWest().getImgName();
         } else if (myDirection == "E") {
             myDirection = "N";
+            myImage = locations[counter].getNorth().getImgName();
         } else if (myDirection == "S") {
             myDirection = "E";
+            myImage = locations[counter].getEast().getImgName();
         } else if (myDirection == "W") {
             myDirection = "S";
+            myImage = locations[counter].getSouth().getImgName();
         }
     }
 
