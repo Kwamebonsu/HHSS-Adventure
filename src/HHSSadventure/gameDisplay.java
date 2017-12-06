@@ -24,7 +24,16 @@ public class gameDisplay extends javax.swing.JFrame {
         initComponents();
         controller = new mainGame(this);
         updateinfo();
-        // Read the Text File
+
+        // Output start screen
+        try {
+            System.out.println(controller.getImage() + controller.getLocation() + controller.getDirection());
+            img = ImageIO.read(new File("Images/images/" + controller.getImage()));
+            System.out.println(controller.getImage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        jImage1.setImage(img);
     }
 
     /**
@@ -93,9 +102,9 @@ public class gameDisplay extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void moveForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveForwardActionPerformed
-        LOL output = new LOL(null);
+        controller.move();
         try {
-            img = ImageIO.read(new File("Images/images/" + output.getImgName()));
+            img = ImageIO.read(new File("Images/images/" + controller.getImage()));
         } catch (Exception e) {
             e.printStackTrace();
         }
