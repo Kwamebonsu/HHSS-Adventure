@@ -109,7 +109,7 @@ public class mainGame {
         }
 
         int counter = 0;
-        // finding the position where 
+        // finding the position where
         while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
             counter++;
             if (myLocation.equalsIgnoreCase(locations[counter].getName())) {
@@ -135,7 +135,7 @@ public class mainGame {
 
     public void move() {
         int counter = 0;
-        // finding the position where 
+        // finding the position where
         while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
             counter++;
         }
@@ -172,7 +172,7 @@ public class mainGame {
     public void rightTurn() {
 
         int counter = 0;
-        // finding the position where 
+        // finding the position where
         while (myLocation.equalsIgnoreCase(locations[counter].getName())) {
             counter++;
         }
@@ -195,7 +195,7 @@ public class mainGame {
 
     public void leftTurn() {
         int counter = 0;
-        // finding the position where 
+        // finding the position where
         while (myLocation.equalsIgnoreCase(locations[counter].getName())) {
             counter++;
         }
