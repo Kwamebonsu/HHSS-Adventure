@@ -27,9 +27,7 @@ public class gameDisplay extends javax.swing.JFrame {
 
         // Output start screen
         try {
-            System.out.println(controller.getImage() + controller.getLocation() + controller.getDirection());
             img = ImageIO.read(new File("Images/images/" + controller.getImage()));
-            System.out.println(controller.getImage());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -112,11 +110,23 @@ public class gameDisplay extends javax.swing.JFrame {
     }//GEN-LAST:event_moveForwardActionPerformed
 
     private void leftTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftTurnActionPerformed
-        // TODO add your handling code here:
+        controller.leftTurn();
+        try {
+            img = ImageIO.read(new File("Images/images/" + controller.getImage()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        jImage1.setImage(img);
     }//GEN-LAST:event_leftTurnActionPerformed
 
     private void rightTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightTurnActionPerformed
-        // TODO add your handling code here:
+        controller.rightTurn();
+        try {
+            img = ImageIO.read(new File("Images/images/" + controller.getImage()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        jImage1.setImage(img);
     }//GEN-LAST:event_rightTurnActionPerformed
     private void updateinfo() {
     }

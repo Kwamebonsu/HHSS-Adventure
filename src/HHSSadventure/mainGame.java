@@ -103,33 +103,18 @@ public class mainGame {
 
             }
 
+            if (myLocation.equalsIgnoreCase(currentLocation)) {
+                myImage = north.getImgName();
+            }
+
+
+
             Location c = new Location(currentLocation, north, east, south, west);
 
             locations[i] = c;
+
+            System.out.println("Image name:" + myImage + " Direction: " + locations[i].getEast().getDirection() + " Location name: " + myLocation + " Img Name: " + locations[i].getEast().getImgName());
         }
-
-        int counter = 0;
-        // finding the position where
-        while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
-            counter++;
-            if (myLocation.equalsIgnoreCase(locations[counter].getName())) {
-                // beginning image is stored beforehand
-
-                //
-                //
-                //
-                //
-                /// THE PROBLEM IS HERE!! Outputting the wrong Image!!!!!
-                //
-                //
-                //
-                myImage = locations[counter].getNorth().getImgName();
-                System.out.println(myImage);
-                break;
-            }
-        }
-        System.out.println(counter);
-
 
     }
 
@@ -144,7 +129,8 @@ public class mainGame {
             if (locations[counter].getNorth().getIsBlocked().equalsIgnoreCase("true")) {
                 myLocation = locations[counter].getNorth().getIsNext();
                 myDirection = locations[counter].getNorth().getNextDirection();
-                myImage = locations[counter].getNorth().getImgName();
+                myImage = locations[counter].getNorth().getImgName();                        // THIS WILL NOT WORK, MOVE ONTO NEXT POSITION NOT CURRENt
+
             }
         } else if (myDirection.equalsIgnoreCase("E")) {
             if (locations[counter].getEast().getIsBlocked().equalsIgnoreCase("true")) {
@@ -173,22 +159,28 @@ public class mainGame {
 
         int counter = 0;
         // finding the position where
-        while (myLocation.equalsIgnoreCase(locations[counter].getName())) {
+        while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
             counter++;
         }
+
+        System.out.println(counter + " " + myImage + " " + myDirection + " " + myLocation);
 
         // changes current direction to the right of it
         if (myDirection.equalsIgnoreCase("N")) {
             myDirection = "E";
+            myLocation = locations[counter].getName();
             myImage = locations[counter].getEast().getImgName();
         } else if (myDirection.equalsIgnoreCase("E")) {
             myDirection = "S";
+            myLocation = locations[counter].getName();
             myImage = locations[counter].getSouth().getImgName();
         } else if (myDirection.equalsIgnoreCase("S")) {
             myDirection = "W";
+            myLocation = locations[counter].getName();
             myImage = locations[counter].getWest().getImgName();
         } else if (myDirection.equalsIgnoreCase("W")) {
             myDirection = "N";
+            myLocation = locations[counter].getName();
             myImage = locations[counter].getNorth().getImgName();
         }
     }
@@ -196,21 +188,27 @@ public class mainGame {
     public void leftTurn() {
         int counter = 0;
         // finding the position where
-        while (myLocation.equalsIgnoreCase(locations[counter].getName())) {
+        while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
             counter++;
         }
+
+        System.out.println(counter);
 
         // changes current direction to the one left of it
         if (myDirection.equalsIgnoreCase("N")) {
             myDirection = "W";
+            System.out.println(locations[counter].getWest().getImgName());
             myImage = locations[counter].getWest().getImgName();
         } else if (myDirection.equalsIgnoreCase("E")) {
+            System.out.println(locations[counter].getNorth().getImgName());
             myDirection = "N";
             myImage = locations[counter].getNorth().getImgName();
         } else if (myDirection.equalsIgnoreCase("S")) {
+            System.out.println(locations[counter].getEast().getImgName());
             myDirection = "E";
             myImage = locations[counter].getEast().getImgName();
         } else if (myDirection.equalsIgnoreCase("W")) {
+            System.out.println(locations[counter].getSouth().getImgName());
             myDirection = "S";
             myImage = locations[counter].getSouth().getImgName();
         }
