@@ -107,6 +107,8 @@ public class gameDisplay extends javax.swing.JFrame {
             e.printStackTrace();
         }
         jImage1.setImage(img);
+        
+        System.out.println(controller.getImage());
     }//GEN-LAST:event_moveForwardActionPerformed
 
     private void leftTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftTurnActionPerformed
@@ -117,6 +119,8 @@ public class gameDisplay extends javax.swing.JFrame {
             e.printStackTrace();
         }
         jImage1.setImage(img);
+        
+        System.out.println(controller.getImage());
     }//GEN-LAST:event_leftTurnActionPerformed
 
     private void rightTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightTurnActionPerformed
@@ -127,6 +131,8 @@ public class gameDisplay extends javax.swing.JFrame {
             e.printStackTrace();
         }
         jImage1.setImage(img);
+        
+        System.out.println(controller.getImage());
     }//GEN-LAST:event_rightTurnActionPerformed
     private void updateinfo() {
     }

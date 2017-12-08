@@ -17,19 +17,11 @@ public class mainGame {
     private String myDirection;
     private String myImage;
     private Location[] locations;
-    private LOL north;
-    private LOL east;
-    private LOL west;
-    private LOL south;
 
     // reading in the file
     public mainGame(gameDisplay d) {
 
-        // initializing the directions
-        north = new LOL(null);
-        east = new LOL(null);
-        west = new LOL(null);
-        south = new LOL(null);
+       
 
         // create a blank file reader
         FileReader file = null;
@@ -54,6 +46,14 @@ public class mainGame {
 
 
         for (int i = 0; i < 24; i++) {
+            
+             // initializing the directions
+        LOL north = new LOL(null);
+        LOL east = new LOL(null);
+        LOL west = new LOL(null);
+        LOL south = new LOL(null);
+        
+        
             in.nextLine();
             // stores name of the location
             String currentLocation = in.next();
@@ -107,13 +107,9 @@ public class mainGame {
                 myImage = north.getImgName();
             }
 
-
-
             Location c = new Location(currentLocation, north, east, south, west);
-
             locations[i] = c;
-
-            System.out.println("Image name:" + myImage + " Direction: " + locations[i].getEast().getDirection() + " Location name: " + myLocation + " Img Name: " + locations[i].getEast().getImgName());
+            
         }
 
     }
@@ -126,28 +122,50 @@ public class mainGame {
         }
         // changes direction and location to next position
         if (myDirection.equalsIgnoreCase("N")) {
-            if (locations[counter].getNorth().getIsBlocked().equalsIgnoreCase("true")) {
+            if (!locations[counter].getNorth().getIsBlocked().equalsIgnoreCase("true")) {
                 myLocation = locations[counter].getNorth().getIsNext();
                 myDirection = locations[counter].getNorth().getNextDirection();
-                myImage = locations[counter].getNorth().getImgName();                        // THIS WILL NOT WORK, MOVE ONTO NEXT POSITION NOT CURRENt
 
+                counter = 0;
+                while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
+                counter++;
+                }
+                myImage = locations[counter].getNorth().getImgName();
             }
         } else if (myDirection.equalsIgnoreCase("E")) {
-            if (locations[counter].getEast().getIsBlocked().equalsIgnoreCase("true")) {
+            if (!locations[counter].getEast().getIsBlocked().equalsIgnoreCase("true")) {
                 myLocation = locations[counter].getEast().getIsNext();
                 myDirection = locations[counter].getEast().getNextDirection();
+                
+                counter = 0;
+                while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
+                counter++;
+                }
                 myImage = locations[counter].getEast().getImgName();
+                
             }
         } else if (myDirection.equalsIgnoreCase("S")) {
-            if (locations[counter].getSouth().getIsBlocked().equalsIgnoreCase("true")) {
+            if (!locations[counter].getSouth().getIsBlocked().equalsIgnoreCase("true")) {
                 myLocation = locations[counter].getSouth().getIsNext();
                 myDirection = locations[counter].getSouth().getNextDirection();
+                
+                counter = 0;
+                while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
+                counter++;
+                }
                 myImage = locations[counter].getSouth().getImgName();
+                
             }
         } else if (myDirection.equalsIgnoreCase("W")) {
-            if (locations[counter].getWest().getIsBlocked().equalsIgnoreCase("true")) {
+            if (!locations[counter].getWest().getIsBlocked().equalsIgnoreCase("true")) {
                 myLocation = locations[counter].getWest().getIsNext();
                 myDirection = locations[counter].getWest().getNextDirection();
+                
+                counter = 0;
+                while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
+                counter++;
+                }
+                
                 myImage = locations[counter].getWest().getImgName();
             }
         }
@@ -162,8 +180,6 @@ public class mainGame {
         while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
             counter++;
         }
-
-        System.out.println(counter + " " + myImage + " " + myDirection + " " + myLocation);
 
         // changes current direction to the right of it
         if (myDirection.equalsIgnoreCase("N")) {
@@ -197,18 +213,14 @@ public class mainGame {
         // changes current direction to the one left of it
         if (myDirection.equalsIgnoreCase("N")) {
             myDirection = "W";
-            System.out.println(locations[counter].getWest().getImgName());
             myImage = locations[counter].getWest().getImgName();
         } else if (myDirection.equalsIgnoreCase("E")) {
-            System.out.println(locations[counter].getNorth().getImgName());
             myDirection = "N";
             myImage = locations[counter].getNorth().getImgName();
         } else if (myDirection.equalsIgnoreCase("S")) {
-            System.out.println(locations[counter].getEast().getImgName());
             myDirection = "E";
             myImage = locations[counter].getEast().getImgName();
         } else if (myDirection.equalsIgnoreCase("W")) {
-            System.out.println(locations[counter].getSouth().getImgName());
             myDirection = "S";
             myImage = locations[counter].getSouth().getImgName();
         }
