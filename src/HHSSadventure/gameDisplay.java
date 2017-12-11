@@ -22,10 +22,10 @@ public class gameDisplay extends javax.swing.JFrame {
      */
     public gameDisplay() {
         initComponents();
+        // Link the mainGame class and gameDisplay
         controller = new mainGame(this);
-        updateinfo();
 
-        // Output start screen
+        // Output start screen (Caf 1)
         try {
             img = ImageIO.read(new File("Images/images/" + controller.getImage()));
         } catch (Exception e) {
@@ -102,6 +102,7 @@ public class gameDisplay extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void moveForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveForwardActionPerformed
+        // Move forward then output then new image
         controller.move();
         try {
             img = ImageIO.read(new File("Images/images/" + controller.getImage()));
@@ -112,6 +113,7 @@ public class gameDisplay extends javax.swing.JFrame {
     }//GEN-LAST:event_moveForwardActionPerformed
 
     private void leftTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftTurnActionPerformed
+        // Turn left then output the new image
         controller.leftTurn();
         try {
             img = ImageIO.read(new File("Images/images/" + controller.getImage()));
@@ -122,6 +124,7 @@ public class gameDisplay extends javax.swing.JFrame {
     }//GEN-LAST:event_leftTurnActionPerformed
 
     private void rightTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightTurnActionPerformed
+        // Turn right then output the new image
         controller.rightTurn();
         try {
             img = ImageIO.read(new File("Images/images/" + controller.getImage()));
@@ -130,8 +133,6 @@ public class gameDisplay extends javax.swing.JFrame {
         }
         jImage1.setImage(img);
     }//GEN-LAST:event_rightTurnActionPerformed
-    private void updateinfo() {
-    }
 
     /**
      * @param args the command line arguments

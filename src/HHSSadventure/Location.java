@@ -10,6 +10,7 @@ package HHSSadventure;
  */
 public class Location {
 
+    // Instance variables
     private String name;
     private LOL north;
     private LOL east;

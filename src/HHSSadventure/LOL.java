@@ -10,12 +10,14 @@ package HHSSadventure;
  */
 public class LOL {
 
+    // Create instance variables
     private String direction;
     private String imgName;
     private String isBlocked;
     private String isNext;
     private String nextDirection;
 
+    // Constructor
     public LOL(String direction) {
         this.direction = direction;
     }

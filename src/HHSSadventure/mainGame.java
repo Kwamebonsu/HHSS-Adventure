@@ -13,38 +13,36 @@ import java.util.Scanner;
  */
 public class mainGame {
 
+    // Instance variables
     private String myLocation;
     private String myDirection;
     private String myImage;
     private Location[] locations;
 
-    // reading in the file
+    // reading in the text file
     public mainGame(gameDisplay d) {
-
-
-
         // create a blank file reader
         FileReader file = null;
         try {
-            //URL url = TextFileExample.class.getResource("input.txt");
             // creating the file reader
             file = new FileReader("input.txt");
         } catch (Exception e) {
             //handle any errors
-            // print out the lovely red errors
+            // print out the errors
             e.printStackTrace();
             // exit the program
             System.exit(0);
         }
         // Use a scanner with the file
         Scanner in = new Scanner(file);
+        // Read in the starting position
         this.myLocation = in.next();
         in.nextLine();
         this.myDirection = in.next();
         // location data collector
         locations = new Location[100];
 
-
+        // Fill the array
         for (int i = 0; i < 24; i++) {
             // initializing the directions
             LOL north = new LOL(null);
@@ -57,7 +55,6 @@ public class mainGame {
             String currentLocation = in.next();
             // reads in n, e, s, w information for that specific location
             for (int j = 0; j < 4; j++) {
-
                 in.nextLine();
                 String direction = in.next();
                 String imageName = in.next();
@@ -65,11 +62,10 @@ public class mainGame {
                 // creating variables for later
                 String nextLocation = null;
                 String nextDirection = null;
-
                 if (!isBlocked.equalsIgnoreCase("true")) {
+                    // Read in the next location and direction
                     nextLocation = in.next();
                     nextDirection = in.next();
-                } else {
                 }
                 // parameters
                 if (j == 0) {
@@ -97,15 +93,12 @@ public class mainGame {
                     west.setIsNext(nextLocation);
                     west.setNextDirection(nextDirection);
                 }
-
             }
 
             if (myLocation.equalsIgnoreCase(currentLocation)) {
                 myImage = north.getImgName();
             }
-
-
-
+            // Store the created Location in an array
             Location c = new Location(currentLocation, north, east, south, west);
 
             locations[i] = c;
@@ -165,7 +158,6 @@ public class mainGame {
             System.out.println(counter);
             myImage = locations[counter].getWest().getImgName();
         }
-
 
     }
 
