@@ -104,6 +104,7 @@ public class gameDisplay extends javax.swing.JFrame {
     private void moveForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveForwardActionPerformed
         // Move forward then output then new image
         controller.move();
+        controller.sound();
         try {
             img = ImageIO.read(new File("Images/images/" + controller.getImage()));
         } catch (Exception e) {

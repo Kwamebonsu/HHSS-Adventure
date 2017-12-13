@@ -4,6 +4,7 @@
  */
 package HHSSadventure;
 
+import jaco.mp3.player.MP3Player;
 import java.io.FileReader;
 import java.util.Scanner;
 
@@ -12,7 +13,9 @@ import java.util.Scanner;
  * @author bonsk5852
  */
 public class mainGame {
+    // Sound
 
+    MP3Player footsteps = new MP3Player(ClassLoader.getSystemResource("Sound/Footsteps.mp3"));
     // Instance variables
     private String myLocation;
     private String myDirection;
@@ -218,6 +221,10 @@ public class mainGame {
 
     public String getDirection() {
         return myDirection;
+    }
+
+    public void sound() {
+        footsteps.play();
     }
 
     /**
