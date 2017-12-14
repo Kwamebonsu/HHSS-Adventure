@@ -4,6 +4,7 @@
  */
 package HHSSadventure;
 
+import jaco.mp3.player.MP3Player;
 import java.io.FileReader;
 import java.util.Scanner;
 
@@ -12,7 +13,9 @@ import java.util.Scanner;
  * @author bonsk5852
  */
 public class mainGame {
+    // Sound
 
+    MP3Player footsteps = new MP3Player(ClassLoader.getSystemResource("Sound/Footsteps.mp3"));
     // Instance variables
     private String myLocation;
     private String myDirection;
@@ -115,8 +118,9 @@ public class mainGame {
         // changes direction and location to next position
         if (myDirection.equalsIgnoreCase("N")) {
             if (!locations[counter].getNorth().getIsBlocked().equalsIgnoreCase("true")) {
+                sound();
                 myLocation = locations[counter].getNorth().getIsNext();
-                myDirection = locations[counter].getNorth().getNextDirection();            // THIS WILL NOT WORK, MOVE ONTO NEXT POSITION NOT CURRENt
+                myDirection = locations[counter].getNorth().getNextDirection();
                 counter = 0;
                 while (!myLocation.equalsIgnoreCase(locations[counter].getName())) {
                     counter++;
@@ -126,6 +130,7 @@ public class mainGame {
             }
         } else if (myDirection.equalsIgnoreCase("E")) {
             if (!locations[counter].getEast().getIsBlocked().equalsIgnoreCase("true")) {
+                sound();
                 myLocation = locations[counter].getEast().getIsNext();
                 myDirection = locations[counter].getEast().getNextDirection();
             }
@@ -137,6 +142,7 @@ public class mainGame {
             myImage = locations[counter].getEast().getImgName();
         } else if (myDirection.equalsIgnoreCase("S")) {
             if (!locations[counter].getSouth().getIsBlocked().equalsIgnoreCase("true")) {
+                sound();
                 myLocation = locations[counter].getSouth().getIsNext();
                 myDirection = locations[counter].getSouth().getNextDirection();
             }
@@ -148,6 +154,7 @@ public class mainGame {
             myImage = locations[counter].getSouth().getImgName();
         } else if (myDirection.equalsIgnoreCase("W")) {
             if (!locations[counter].getWest().getIsBlocked().equalsIgnoreCase("true")) {
+                sound();
                 myLocation = locations[counter].getWest().getIsNext();
                 myDirection = locations[counter].getWest().getNextDirection();
             }
@@ -218,6 +225,10 @@ public class mainGame {
 
     public String getDirection() {
         return myDirection;
+    }
+
+    public void sound() {
+        footsteps.play();
     }
 
     /**
